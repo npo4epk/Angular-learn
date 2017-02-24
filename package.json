@@ -1,0 +1,22 @@
+{
+  "name": "Template",
+  "version": "1.2.0",
+  "description": "My Gulp Template",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/npo4epk/Starting-template"
+  },
+  "author": "Nikita Karpinskiy <nekit-1989@mail.ru>",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.11.1",
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "wiredep": "^4.0.0"
+  }
+}
