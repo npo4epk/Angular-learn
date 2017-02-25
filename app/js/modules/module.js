@@ -8,4 +8,11 @@
 		'myApp.text',
 		])	
 
+	/* $rootScope 
+	======================== */ 
+	.run(function($rootScope) {
+		$rootScope.moduleName = 'myApp';
+		$rootScope.message = 'Hello Angular';
+	});
+
 }());

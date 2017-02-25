@@ -8,6 +8,13 @@
 		'myApp.text',
 		])	
 
+	/* $rootScope 
+	======================== */ 
+	.run(function($rootScope) {
+		$rootScope.moduleName = 'myApp';
+		$rootScope.message = 'Hello Angular';
+	});
+
 }());
 /* PhoneCtr
 ======================== */
@@ -18,11 +25,11 @@
 	angular.module('myApp.phone', [])
 			   .controller('PhoneCtr', PhoneCtr);	
 
-	PhoneCtr.$inject = ['$scope', '$log']; 
+	PhoneCtr.$inject = ['$scope', '$log', '$rootScope']; 
 
-	function PhoneCtr( $scope, $log) {
+	function PhoneCtr( $scope, $log, $rootScope) {
 		$scope.phone = {
-			name : 'Motorolla EX - 250',
+			name : 'Motorolla EX - 250' + ' - ' + $rootScope.message + ' (добавленно с $rootScope)',
 			year : 2015,
 			price : 200,
 			company : {
