@@ -1,3 +1,16 @@
 .an-group {
 	border-bottom: 1px solid black;
 }
+
+.list {
+	list-style: none;
+	padding: 0;
+}
+
+.list .even {
+	background-color: #777;
+}
+
+.list .odd {
+	background-color: #889;
+}

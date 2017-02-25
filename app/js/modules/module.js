@@ -6,6 +6,7 @@
 		'myApp.purchase',
 		'myApp.phone',
 		'myApp.text',
+		'myApp.phoneList',
 		])	
 
 	/* $rootScope 

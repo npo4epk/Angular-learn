@@ -76,6 +76,34 @@
 			<p>Модуль: {{ moduleName }}</p>
 			<p>Сообщение: {{ message }}</p>
 		</div>
+		
+		<!-- PhoneListCtr 
+		======================== -->
+		<div ng-controller="PhoneListCtr" class="an-group">
+			<ul class="list">
+				<li ng-repeat="phone in phones"  ng-class="$odd ? 'odd' : 'even'">
+					<p><b>{{$index + 1}}. Наименование:</b> {{phone.name}}</p>
+					<p><b>Цена:</b> {{phone.price}}</p>
+					<p><b>Производитель:</b> {{phone.company.name}}</p>
+				</li>
+			</ul>
+		</div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 		<!-- SCRIPT -->
