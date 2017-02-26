@@ -7,6 +7,11 @@
 		'myApp.phone',
 		'myApp.text',
 		'myApp.phoneList',
+		'myApp.milk',
+		'myApp.phones-tablets',
+		'myApp.phones-tablets-switch',
+
+		'ngSanitize', //angular-sanitize.js
 		])	
 
 	/* $rootScope 
