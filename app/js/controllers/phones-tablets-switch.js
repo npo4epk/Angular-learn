@@ -58,6 +58,14 @@
 			value: 'Phones',
 			label: 'Смартфоны'
 		}];
+
+		$scope.somestyle={background: '#eee', color:'#333'};
+		$scope.someclass="myclass";
+
+		$scope.app = {visible : false};
+		$scope.app2 = {visible : false};
+
+
 	}
 
 }());

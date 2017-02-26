@@ -66,7 +66,7 @@
 		<!-- TextCtr 
 		======================== -->
 		<div ng-controller="TextCtr as text" class="an-group">
-			<h3 class="ssss">{{text.message}}</h3>
+			<h3>{{text.message}}</h3>
 			<p>{{text.text}}</p>
 		</div>
 		
@@ -120,6 +120,28 @@
 		<!-- PhonesTabletsSwitchCtr 
 		======================== -->
 		<div ng-controller="PhonesTabletsSwitchCtr" class="an-group">
+
+			
+			<div ng-style="somestyle">Директива ng-style</div>
+			<div ng-class="someclass">Директива ng-class</div>
+
+
+			<p ng-show="app.visible">Первый блок</p>
+			<p ng-show="app.visible">Второй блок</p>
+			<label>
+				<input type="checkbox" ng-model="app.visible">
+				<span ng-hide="app.visible">Открыть</span>
+				<span ng-show="app.visible">Скрыть</span>
+			</label>
+
+			<div>
+				<input type="checkbox" ng-model="app2.visible">Открыть/скрыть
+				<p ng-if="app2.visible">Первый блок</p>
+				<p ng-if="!app2.visible">Второй блок</p>
+			</div>
+
+
+
 			<div ng-repeat="mode in modes">
 				<label>
 					<input type="radio" ng-model="data.mode" name="modes" value="{{mode.value}}">
