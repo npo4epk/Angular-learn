@@ -209,7 +209,7 @@
 
 		<!-- QuestionSearchCtr 
 		======================== -->
-		<div  ng-controller="QuestionSearchCtr">
+		<div  ng-controller="QuestionSearchCtr" class="an-group">
 			<div class="quest">
 				<h3>{{question.text}}</h3>
 				<p>{{question.author}} </p> <p><i>{{question.date}}</i></p>
@@ -231,7 +231,7 @@
 
 		<!-- AnswerCtr 
 		======================== -->
-		<div ng-controller="AnswerCtr">
+		<div ng-controller="AnswerCtr" class="an-group">
 			<form name="answerForm">
 				<fieldset>
 					<p><label for="answerText">Текст ответа</label>
@@ -244,6 +244,18 @@
 							<button type="submit" ng-click="save(answer, answerForm)">Сохранить</button>
 						</form>
 					</div>
+
+		<!-- AnswerListCtr 
+		======================== -->
+		<div ng-controller="AnswerListCtr">
+			<div class="quest">
+				<h3>{{question.text}}</h3>
+				<p>{{question.author}} </p> <p><i>{{question.date}}</i></p>
+			</div>
+			<h3>Ответы</h3>
+			<div answer-list="question"></div>
+		</div>
+
 
 
 

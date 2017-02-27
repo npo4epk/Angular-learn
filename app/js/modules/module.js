@@ -15,8 +15,8 @@
 		'myApp.question',
 		'myApp.question-filter',
 		'myApp.answer',
-
-
+		'myApp.answer-list',
+	
 		'ngSanitize', //angular-sanitize.js
 		])	
 
