@@ -1,3 +1,5 @@
+/* myApp
+======================== */
 (function () {
 
 	"use strict"
@@ -10,6 +12,10 @@
 		'myApp.milk',
 		'myApp.phones-tablets',
 		'myApp.phones-tablets-switch',
+		'myApp.question',
+		'myApp.question-filter',
+		'myApp.answer',
+
 
 		'ngSanitize', //angular-sanitize.js
 		])	
@@ -21,6 +27,29 @@
 		$rootScope.message = 'Hello Angular';
 	});
 
+}());
+/* myApp
+======================== */
+(function(){
+
+	'use strict';
+
+	angular.module('myApp.answer', [])
+				 .controller('AnswerCtr', AnswerCtr);
+
+	AnswerCtr.$inject = ['$log', '$scope', '$rootScope'];
+	
+	function AnswerCtr( $log, $scope, $rootScope ) {
+		$scope.save = function (answer, answerForm){
+			$log.log(answerForm);
+			$log.log(answer);
+			if(answerForm.$valid){
+                // действия по сохранению
+                $log.log(answer);
+                alert(answer.author + ", ваш ответ сохранен");
+              }
+            };
+          };
 }());
 /* TextCtr
 ======================== */
@@ -169,7 +198,6 @@
 
 	function PhonesTabletsSwitchCtr( $log, $scope, $rootScope ) {
 
-		$log.log('dada');
 		$scope.tablets = tablets;
 		$scope.phones = phones;
 
@@ -240,7 +268,6 @@
 
 	function PhonesTabletsCtr( $log, $scope, $rootScope ) {
 
-		$log.log('dada');
 		$scope.tablets = tablets;
 		$scope.phones = phones;
 
@@ -295,6 +322,120 @@
 		} 
 	}
 }
+
+}());
+/* QuestionSearchCtr
+======================== */
+
+(function(){
+
+	'use strict';
+
+	angular.module('myApp.question-filter', [])
+				 .controller('QuestionSearchCtr', QuestionSearchCtr)
+				 .filter('formatText', formatText);
+
+	QuestionSearchCtr.$inject = ['$log', '$scope', '$rootScope'];
+				 
+  function QuestionSearchCtr($log, $scope, $rootScope) {
+
+  	$scope.question={
+  		text: 'Какой js-фреймворк лучше использовать?',
+  		author: 'Иван Иванов',
+  		date: '20/10/2013',
+  		answers: 
+  		[{
+  			text: 'AngularJS!',
+  			author: 'Вова Сидоров',
+  			date: '20/10/2013',
+  			rate:2
+  		},{
+  			text: 'AngularJS лучше всех',
+  			author: 'Олег Кузнецов',
+  			date: '21/10/2013',
+  			rate:3
+  		},{
+  			text: 'фигасе квестшен',
+  			author: 'Неизвестный',
+  			date: '22/10/2013',
+  			rate:0
+  		}]
+  	},
+
+  	$scope.voteUp = function (answer){
+  		answer.rate++;
+  	};
+  	$scope.voteDown = function (answer){
+  		answer.rate--;
+  	};
+  }
+
+  function formatText($log) {
+  	return function(text) {
+  		$log.log(text);
+  		if( text.indexOf("AngularJS") !== -1 ){
+  			return "***";
+  		}
+  		else{
+  			return text;
+  		}
+  	}
+  }
+
+}());
+
+/* PhonesTabletsSwitchCtr
+======================== */
+(function(){
+
+	'use strict';
+
+	angular.module('myApp.question', [])
+	.controller('QuestionCtr', QuestionCtr);
+
+	QuestionCtr.$inject = ['$log', '$scope', '$rootScope'];
+
+	function QuestionCtr($log, $scope, $rootScope) {
+
+		$scope.question={
+			text: 'Какой js-фреймворк лучше использовать?',
+			author: 'Иван Иванов',
+			date: '20/10/2013',
+			answers: 
+			[{
+				text: 'AngularJS!',
+				author: 'Вова Сидоров',
+				date: '21/10/2013',
+				rate:2
+			},{
+				text: 'AngularJS лучше всех',
+				author: 'Олег Кузнецов',
+				date: '22/10/2013',
+				rate:0
+			},{
+				text: 'Я бы использовал knockout',
+				author: 'Неизвестный',
+				date: '23/10/2013',
+				rate:0
+			}]
+		};
+
+		$scope.voteUp = function(answer) {
+			$log.log(answer);
+			answer.rate++;
+		};
+
+		$scope.voteDown = function(answer) {
+			answer.rate--;
+		};
+
+		$scope.questColorClass = 'questcolor';
+
+		$scope.changeClass = function(event) {
+			$log.log('da');
+			$scope.questColorClass = event.type == "mouseenter" ? "questselectedcolor" : "questcolor";
+		};
+	}
 
 }());
 /* TextCtr

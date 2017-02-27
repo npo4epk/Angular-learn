@@ -45,7 +45,6 @@
 
 	function PhonesTabletsCtr( $log, $scope, $rootScope ) {
 
-		$log.log('dada');
 		$scope.tablets = tablets;
 		$scope.phones = phones;
 

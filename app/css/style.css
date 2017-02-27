@@ -14,3 +14,38 @@
 .list .odd {
 	background-color: #889;
 }
+
+.quest {
+    border-bottom: 1px solid #aaa; 
+    margin-bottom: 10px; 
+}
+.questcolor {
+    background: blue;
+}
+.questselectedcolor{ 
+    background: red;
+}
+.answer {
+    border-bottom: 1px solid #ccc; 
+    margin-bottom: 10px;
+}
+.vote {
+    float: left; 
+    text-align: center; 
+    width: 21px; 
+    margin-right: 20px;
+}
+.vote-up, .vote-down{
+    display: block;
+    margin: 0px auto;
+    width: 21px;
+    height: 25px;
+}
+.vote-up{
+	background-color: blue;
+	overflow: hidden;
+}
+.vote-down{
+ 	background-color: blue;
+	overflow: hidden;
+}

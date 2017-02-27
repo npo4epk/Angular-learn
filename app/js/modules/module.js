@@ -1,3 +1,5 @@
+/* myApp
+======================== */
 (function () {
 
 	"use strict"
@@ -10,6 +12,10 @@
 		'myApp.milk',
 		'myApp.phones-tablets',
 		'myApp.phones-tablets-switch',
+		'myApp.question',
+		'myApp.question-filter',
+		'myApp.answer',
+
 
 		'ngSanitize', //angular-sanitize.js
 		])	
